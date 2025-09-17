@@ -6,25 +6,39 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class CalculatorTest {
+class CalculatorTest {
 
     private Calculator c;
+    private IllegalStateException exception;
 
     @BeforeEach
     void setUp() {
         c = new Calculator();
+        exception = new IllegalStateException();
     }
 
     @Test
-    void isOff() {
+    void testInitialState(){
         assertTrue(c.isOff());
+        assertEquals(0, c.getInputA());
+        assertEquals(0, c.getInputB());
     }
 
     @Test
-    void isOn() {
+    void testSetOn() {
         c.setOn();
         assertFalse(c.isOff());
+    }
+    
+    @Test
+    void shouldThrowExceptionWhenAddingWhileOff() {
+        c.setInputA(1);
+        c.setInputB(2);
+
+        exception = assertThrows(IllegalStateException.class, () -> c.add());
+        assertEquals("Calculator is off", exception.getMessage());
     }
 
     @Test
@@ -45,6 +59,7 @@ public class CalculatorTest {
 
     @Test
     void addPositiveNumbers() {
+        c.setOn();
         c.setInputA(1);
         c.setInputB(2);
 
@@ -53,6 +68,7 @@ public class CalculatorTest {
 
     @Test
     void addNegativeNumbers() {
+        c.setOn();
         c.setInputA(-1);
         c.setInputB(-2);
 
@@ -61,6 +77,7 @@ public class CalculatorTest {
 
     @Test
     void addZero() {
+        c.setOn();
         c.setInputA(0);
         c.setInputB(0);
 
@@ -73,6 +90,7 @@ public class CalculatorTest {
 
     @Test
     void addPositiveAndNegativeNumbers() {
+        c.setOn();
         c.setInputA(1);
         c.setInputB(-1);
 
@@ -83,4 +101,43 @@ public class CalculatorTest {
 
         assertEquals(-2, c.add());
     }
+
+    @Test
+    void shouldThrowExceptionWhenSubtractingWhileOff() {
+        c.setInputA(1);
+        c.setInputB(2);
+
+        exception = assertThrows(IllegalStateException.class, () -> c.subtract());
+        assertEquals("Calculator is off", exception.getMessage());
+    }
+
+ß
+    @Test
+    void subtractPositiveNumbers() {
+        c.setInputA(1);
+        c.setInputB(2);
+        assertEquals(-1, c.subtract());
+    }
+
+    @Test
+    void subtractNegativeNumbers() {
+        c.setInputA(-1);
+        c.setInputB(-2);
+        assertEquals(1, c.subtract());
+    }
+
+    @Test
+    void subtractZero() {
+        c.setInputA(0);
+        c.setInputB(0);
+        assertEquals(0, c.subtract());
+    }
+
+    @Test
+    void subtractPositiveAndNegativeNumbers() {
+        c.setInputA(1);
+        c.setInputB(-1);
+        assertEquals(2, c.subtract());
+    }
+
 }

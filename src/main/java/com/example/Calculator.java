@@ -30,7 +30,10 @@ public class Calculator {
         this.b = b;
     }
 
-    public int add() {
+    public int add() throws IllegalStateException {
+        if (isOff()) {
+            throw new IllegalStateException("Calculator is off");
+        }
         return a + b;
     }
 }

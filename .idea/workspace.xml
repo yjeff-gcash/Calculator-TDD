@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="320d7d42-7a76-4ed3-855a-e61b6c88ae67" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/CalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/CalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/CalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
