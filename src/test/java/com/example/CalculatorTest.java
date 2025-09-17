@@ -5,8 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class MainTest {
+public class CalculatorTest {
 
     private Calculator c;
 
@@ -22,7 +23,7 @@ public class MainTest {
 
     @Test
     void isOn() {
-        c.setOn(true);
+        c.setOn();
         assertFalse(c.isOff());
     }
 

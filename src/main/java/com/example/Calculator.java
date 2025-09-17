@@ -5,7 +5,8 @@ public class Calculator {
     int a;
     int b;
 
-    public boolean isOn() {
+    public boolean setOn() {
+        on = true;
         return on;
     }
 
@@ -13,19 +14,19 @@ public class Calculator {
         return !on;
     }
 
-    public int getA() {
+    public int getInputA() {
         return a;
     }
 
-    public void setA(int a) {
+    public void setInputA(int a) {
         this.a = a;
     }
 
-    public int getB() {
+    public int getInputB() {
         return b;
     }
 
-    public void setB(int b) {
+    public void setInputB(int b) {
         this.b = b;
     }
 
