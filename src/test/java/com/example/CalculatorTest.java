@@ -111,9 +111,10 @@ class CalculatorTest {
         assertEquals("Calculator is off", exception.getMessage());
     }
 
-ß
+
     @Test
     void subtractPositiveNumbers() {
+        c.setOn();
         c.setInputA(1);
         c.setInputB(2);
         assertEquals(-1, c.subtract());
@@ -121,6 +122,7 @@ class CalculatorTest {
 
     @Test
     void subtractNegativeNumbers() {
+        c.setOn();
         c.setInputA(-1);
         c.setInputB(-2);
         assertEquals(1, c.subtract());
@@ -128,6 +130,7 @@ class CalculatorTest {
 
     @Test
     void subtractZero() {
+        c.setOn();
         c.setInputA(0);
         c.setInputB(0);
         assertEquals(0, c.subtract());
@@ -135,6 +138,7 @@ class CalculatorTest {
 
     @Test
     void subtractPositiveAndNegativeNumbers() {
+        c.setOn();
         c.setInputA(1);
         c.setInputB(-1);
         assertEquals(2, c.subtract());

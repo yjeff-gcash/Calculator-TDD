@@ -36,4 +36,12 @@ public class Calculator {
         }
         return a + b;
     }
+
+    public int subtract() throws IllegalStateException {
+        if (isOff()) {
+            throw new IllegalStateException("Calculator is off");
+        }
+
+        return a - b;
+    }
 }
